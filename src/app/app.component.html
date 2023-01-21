@@ -1,1 +1,9 @@
-<img [src]="dogImage"/>
+<img [src]="dogImage" alt="image of dog"/>
+
+<ngb-rating [(rate)]="dogRate">
+  <ng-template let-fill="fill">
+    <i class="bi-star{{fill === 100 ? '-fill' : ''}}" [class.filled]="fill === 100"></i>
+  </ng-template>
+</ngb-rating>
+
+<p>You rate this dog: {{dogRate + 10}} / 10</p>
