@@ -1,0 +1,9 @@
+<html>
+    <h1>Breeds</h1>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search Breeds" aria-label="Search Breeds" aria-describedby="basic-addon1" [(ngModel)]="searchValue" (ngModelChange)="filterBreeds($event)">
+      </div>
+    <div *ngFor="let breed of breedsList">
+        <p (click)="selected(breed)">{{breed}}</p>
+    </div>
+</html>

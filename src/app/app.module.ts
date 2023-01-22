@@ -9,12 +9,15 @@ import { NgbRatingModule} from '@ng-bootstrap/ng-bootstrap';
 import { HistoryComponent } from './components/history/history.component';
 import { RatingComponent } from './components/rating/rating.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BreedSelectorComponent } from './components/breed-selector/breed-selector.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HistoryComponent,
-    RatingComponent
+    RatingComponent,
+    BreedSelectorComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgbModule,
     NgbRatingModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

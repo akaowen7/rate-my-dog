@@ -15,4 +15,8 @@ export class DogService {
   getDog(): Observable<any> {
     return this.http.get(this.dogUrl);
   }
+
+  getDogByBreed(breed: string): Observable<any> {
+    return this.http.get("https://dog.ceo/api/breed/" + breed + "/images/random");
+  }
 }

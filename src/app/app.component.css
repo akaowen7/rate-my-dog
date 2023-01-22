@@ -29,6 +29,11 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    flex: 0 1 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .btn{
     margin: .5em;
@@ -41,4 +46,15 @@ p{
     justify-content: center;
     align-items: center;
     width: 60vw;
+}
+.underPhoto {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+
+}
+.aux {
+    flex: 0 1 auto;
+    margin-left: auto;
 }

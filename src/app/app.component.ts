@@ -6,7 +6,7 @@ import { NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
 import { Rating } from './Rating';
 
 import { HistoryComponent } from './components/history/history.component';
-import { RatingComponent } from './components/rating/rating.component';
+import { BreedSelectorComponent } from './components/breed-selector/breed-selector.component';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +20,8 @@ export class AppComponent {
   dogImage : string = "";
   dogRate : number = 0;
   ratings : Rating[] = [];
+
+  breed : string = "";
   
   constructor(private dogService: DogService, config: NgbRatingConfig, public dialog: MatDialog) { 
     this.dogService.getDog().subscribe((dog: any) => {
@@ -34,9 +36,15 @@ export class AppComponent {
 
     this.dogRate = 0;
 
-    this.dogService.getDog().subscribe((dog: any) => {
-      this.dogImage = dog["message"];
-    });
+    if (this.breed == "") {
+      this.dogService.getDog().subscribe((dog: any) => {
+        this.dogImage = dog["message"];
+      });
+    } else {  
+      this.dogService.getDogByBreed(this.breed).subscribe((dog: any) => {
+        this.dogImage = dog["message"];
+      });
+    }
   }
 
   toggleHistory() {
@@ -51,6 +59,21 @@ export class AppComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+    });
+  }
+
+  openBreeds() {
+    const dialogRef = this.dialog.open(BreedSelectorComponent, {
+      width: '50vh',
+      height:  '70vh',
+      maxWidth: '50vh',
+      maxHeight: '90vh',
+      data: {ratings: this.ratings}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.breed = result;
+      console.log(this.breed);
     });
   }
 }
