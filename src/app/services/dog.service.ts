@@ -17,6 +17,7 @@ export class DogService {
   }
 
   getDogByBreed(breed: string): Observable<any> {
+    //console.log("https://dog.ceo/api/breed/" + breed + "/images/random");
     return this.http.get("https://dog.ceo/api/breed/" + breed + "/images/random");
   }
 }

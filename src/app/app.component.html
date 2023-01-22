@@ -14,11 +14,11 @@
       <p>Your rating: {{dogRate + 10}} / 10</p>
       
       <button class="btn btn-outline-primary" (click)="rateDog()">Rate</button>
-      <button class="btn btn-outline-primary" (click)="toggleHistory()">History</button>
-    </div>
-  
-    <div class="aux">
-      <button class="btn btn-outline-primary" (click)="openBreeds()">Get dogs by breed</button>
+
+      <div class="breedHistory">
+        <button class="btn btn-outline-primary secondary" (click)="toggleHistory()">History</button>
+        <button class="btn btn-outline-primary secondary" (click)="openBreeds()">Get dogs by breed</button>
+      </div>
     </div>
 
   </div>
