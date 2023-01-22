@@ -1,1 +1,24 @@
-<p>rating works!</p>
+<div class="card">
+    <img src={{rating.dogURL}} alt="image of dog"/>
+    <div class="rate">
+        <p>You rated this dog:</p>
+        <div class="stars">
+            <!-- I could have made this a component but likeeeee is it reallyyyyy worth it? -->
+            <ngb-rating [(rate)]="five">
+                <ng-template let-fill="fill">
+                    <i class="bi-star{{fill === 100 ? '-fill' : ''}}" [class.filled]="fill === 100"></i>
+                </ng-template>
+            </ngb-rating>
+            <ngb-rating [(rate)]="five">
+                <ng-template let-fill="fill">
+                    <i class="bi-star{{fill === 100 ? '-fill' : ''}}" [class.filled]="fill === 100"></i>
+                </ng-template>
+            </ngb-rating>
+            <ngb-rating [(rate)]="rating.rating">
+                <ng-template let-fill="fill">
+                    <i class="bi-star{{fill === 100 ? '-fill' : ''}}" [class.filled]="fill === 100"></i>
+                </ng-template>
+            </ngb-rating>
+        </div>
+    </div>
+</div>

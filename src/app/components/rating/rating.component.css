@@ -1,0 +1,35 @@
+.card{
+    display: flex;
+    flex-direction: row;
+    padding: .5em;
+    margin: .5em;
+    box-shadow: 0px 0px .5em gray;
+}
+.rate{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.stars{
+    display: flex;
+    flex-direction: column;
+}
+img{
+    height: 20vh;
+    margin: 1vh;
+}
+i {
+    font-size: 1.3rem;
+    padding-right: 0.1rem;
+    color: #b0c4de;
+}
+.filled {
+    color: #3e9eff;
+}
+p{
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 1em;
+}
