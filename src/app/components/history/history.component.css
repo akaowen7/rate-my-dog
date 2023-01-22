@@ -4,5 +4,12 @@ ul{
 }
 h1{
     text-align: center;
-    margin: .75em;
+    margin: .1em;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5em;
 }

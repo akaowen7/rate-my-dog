@@ -1,4 +1,7 @@
-<h1>Rating History</h1>
+<header>
+    <h1>Rating History</h1>
+    <button class="btn btn-outline-primary" (click)="toggleSort()">{{buttonText}}</button>
+</header>
 <ul>
     <app-rating *ngFor="let rating of ratings" [rating]="rating"></app-rating>
 </ul>
