@@ -22,4 +22,13 @@ export class AppComponent {
 
     config.max = 5;
   }
+
+  rateDog() {
+    console.log(this.dogRate);
+    this.dogRate = 0;
+    
+    this.dogService.getDog().subscribe((dog: any) => {
+      this.dogImage = dog["message"];
+    });
+  }
 }

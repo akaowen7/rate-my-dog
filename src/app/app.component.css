@@ -4,5 +4,30 @@ i {
     color: #b0c4de;
 }
 .filled {
-    color: #1e90ff;
+    color: #3e9eff;
+}
+p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: .5em;
+}
+.dog {
+    display: block;
+    margin: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60vh;
+    padding: 1em;
+    box-shadow: 0px 0px 1em gray;
+}
+.ratingSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    margin: 1em;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
