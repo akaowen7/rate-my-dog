@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 import { DogService } from './services/dog.service';
 import { NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
@@ -30,10 +30,9 @@ export class AppComponent {
   }
 
   rateDog() {
-    console.log(this.dogRate);
-    this.dogRate = 0;
-    
     this.ratings.push({id: this.ratings.length, rating: this.dogRate, dogURL: this.dogImage});
+
+    this.dogRate = 0;
 
     this.dogService.getDog().subscribe((dog: any) => {
       this.dogImage = dog["message"];
@@ -42,10 +41,12 @@ export class AppComponent {
 
   toggleHistory() {
     const dialogRef = this.dialog.open(HistoryComponent, {
-      width: '100vh',
-      height:  '80vh',
-      maxWidth: '100vh',
-      maxHeight: '80vh',
+      // this is a bit sketchy
+      width: '110vh',
+      height:  '90vh',
+      maxWidth: '110vh',
+      maxHeight: '90vh',
+      data: {ratings: this.ratings}
     });
 
     dialogRef.afterClosed().subscribe(result => {

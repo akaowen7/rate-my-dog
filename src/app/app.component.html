@@ -1,15 +1,17 @@
+<html>
+  <img [src]="dogImage" alt="image of dog" class="dog"/> 
 
-<img [src]="dogImage" alt="image of dog" class="dog"/> 
+  <div class="ratingSection">
+    <!--https://ng-bootstrap.github.io/#/components/rating/examples-->
+    <ngb-rating [(rate)]="dogRate">
+      <ng-template let-fill="fill">
+        <i class="bi-star{{fill === 100 ? '-fill' : ''}}" [class.filled]="fill === 100"></i>
+      </ng-template>
+    </ngb-rating>
+    
+    <p>Your rating: {{dogRate + 10}} / 10</p>
 
-<div class="ratingSection">
-  <ngb-rating [(rate)]="dogRate">
-    <ng-template let-fill="fill">
-      <i class="bi-star{{fill === 100 ? '-fill' : ''}}" [class.filled]="fill === 100"></i>
-    </ng-template>
-  </ngb-rating>
-  
-  <p>Your rating: {{dogRate + 10}} / 10</p>
-
-  <button class="btn btn-outline-primary" (click)="rateDog()">Rate</button>
-  <button class="btn btn-outline-primary" (click)="toggleHistory()">History</button>
-</div>
+    <button class="btn btn-outline-primary" (click)="rateDog()">Rate</button>
+    <button class="btn btn-outline-primary" (click)="toggleHistory()">History</button>
+  </div>
+</html>
