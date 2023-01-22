@@ -24,7 +24,7 @@ export class HistoryComponent {
 
     this.ratings = data.ratings;
   }
-
+  
   toggleSort() {
     this.highestToLowest = !this.highestToLowest;
     this.buttonText = this.highestToLowest ? "Sort by highest" : "Sort by lowest";

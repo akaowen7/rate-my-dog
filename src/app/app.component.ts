@@ -16,11 +16,11 @@ import { BreedSelectorComponent } from './components/breed-selector/breed-select
 })
 
 export class AppComponent {
+  // variables
   title = 'rate-my-dog';
   dogImage : string = "";
   dogRate : number = 0;
   ratings : Rating[] = [];
-
   breed : string = "";
   
   constructor(private dogService: DogService, config: NgbRatingConfig, public dialog: MatDialog) { 
@@ -31,11 +31,13 @@ export class AppComponent {
     config.max = 5;
   }
 
+  // logs the dog rating and gets a new dog
   rateDog() {
     this.ratings.push({id: this.ratings.length, rating: this.dogRate, dogURL: this.dogImage});
 
     this.dogRate = 0;
 
+    // if the breed is empty, get a random dog
     if (this.breed == "") {
       this.dogService.getDog().subscribe((dog: any) => {
         this.dogImage = dog["message"];
@@ -47,6 +49,7 @@ export class AppComponent {
     }
   }
 
+  // opens the history dialog
   toggleHistory() {
     const dialogRef = this.dialog.open(HistoryComponent, {
       // this is a bit sketchy
@@ -62,6 +65,7 @@ export class AppComponent {
     });
   }
 
+  
   openBreeds() {
     const dialogRef = this.dialog.open(BreedSelectorComponent, {
       width: '50vh',
