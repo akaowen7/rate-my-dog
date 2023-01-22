@@ -13,12 +13,12 @@ p{
 }
 .dog {
     display: block;
-    margin: 1em;
+    margin: 3vh;
     margin-left: auto;
     margin-right: auto;
     height: 60vh;
-    padding: 1em;
-    box-shadow: 0px 0px 1em gray;
+    padding: 3vh;
+    box-shadow: 0px 0px 2.5vh gray;
 }
 .ratingSection {
     display: flex;
@@ -27,7 +27,14 @@ p{
     align-items: center;
 }
 .btn{
-    margin: 1em;
+    margin: .5em;
     font-size: 1.5rem;
     font-weight: bold;
+}
+.history {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
 }
